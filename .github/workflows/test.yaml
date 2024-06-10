@@ -1,0 +1,24 @@
+name: Test
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        env:
+          - { os: 'ubuntu-22.04', tool: 'bun' }
+          - { os: 'macos-12', tool: 'bun' }
+          - { os: 'windows-2022', tool: 'bun' }
+    runs-on: ${{ matrix.env.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      # Testing `bun`
+      - uses: oven-sh/setup-bun@v1
+      - name: Install and test with Bun
+        run: |
+          bun -v
+          bun install
+          bun test --coverage
