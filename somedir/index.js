@@ -9,10 +9,10 @@ export function func() {
   try {
     // change dir
     process.chdir(srcdir)
-    console.log('CWD: ', process.cwd())
+    console.log('Changed CWD: ', process.cwd())
   } finally {
     // restore dir
     process.chdir(dir)
-    console.log('CWD: ', process.cwd())
+    console.log('Restored CWD: ', process.cwd())
   }
 }
