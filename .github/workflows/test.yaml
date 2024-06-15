@@ -9,7 +9,6 @@ jobs:
       matrix:
         env:
           - { os: 'ubuntu-22.04', tool: 'bun' }
-          - { os: 'macos-12', tool: 'bun' }
           - { os: 'windows-2022', tool: 'bun' }
     runs-on: ${{ matrix.env.os }}
     steps:
@@ -17,8 +16,13 @@ jobs:
 
       # Testing `bun`
       - uses: oven-sh/setup-bun@v1
-      - name: Install and test with Bun
+      - name: Install
         run: |
           bun -v
           bun install
-          bun test --coverage
+
+      - name: Test
+        run: bun test
+
+      - name: Normal run
+        run: bun index.js

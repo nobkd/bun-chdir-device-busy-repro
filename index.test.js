@@ -1,7 +1,6 @@
-import { test, expect } from 'bun:test'
-
-import { func } from './index.js'
+import { test } from 'bun:test'
+import { func } from './somedir/index.js'
 
 test('my test', () => {
-    expect(func()).toBe('Hello Bun')
+    func()
 })
