@@ -1,14 +1,16 @@
-export function func() {
+import { join } from 'node:path'
+
+export function func(dirname) {
   const dir = process.cwd()
-  const srcdir = __dirname
+  const testdir = join(dir, dirname)
 
   console.log('CWD: ', process.cwd())
   console.log('DIR: ', dir)
-  console.log('SRCDIR: ', srcdir)
+  console.log('SRCDIR: ', testdir)
 
   try {
     // change dir
-    process.chdir(srcdir)
+    process.chdir(testdir)
     console.log('Changed CWD: ', process.cwd())
   } finally {
     // restore dir
