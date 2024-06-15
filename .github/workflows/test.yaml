@@ -25,4 +25,5 @@ jobs:
         run: bun test
 
       - name: Normal run
+        if: success() || failure()
         run: bun index.js
