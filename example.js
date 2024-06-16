@@ -4,6 +4,8 @@ export function func(dirname) {
   const dir = process.cwd()
   const testdir = join(dir, dirname)
 
+  console.log()
+  console.log('TEST INPUT:', dirname)
   console.log('CWD: ', process.cwd())
   console.log('DIR: ', dir)
   console.log('TESTDIR: ', testdir)
