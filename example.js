@@ -6,7 +6,7 @@ export function func(dirname) {
 
   console.log('CWD: ', process.cwd())
   console.log('DIR: ', dir)
-  console.log('SRCDIR: ', testdir)
+  console.log('TESTDIR: ', testdir)
 
   try {
     // change dir
