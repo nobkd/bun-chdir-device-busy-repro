@@ -20,6 +20,7 @@ jobs:
         run: |
           bun -v
           bun install
+          bun setup.js
 
       - name: Test
         run: bun test
