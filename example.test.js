@@ -9,8 +9,12 @@ test('somedir test', () => {
     func('somedir')
 })
 
-test('github test', () => {
+test('.github test', () => {
     func('.github')
+})
+
+test('dot-dir test', () => {
+    func('.test')
 })
 
 test('.. test', () => {
